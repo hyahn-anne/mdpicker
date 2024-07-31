@@ -44,32 +44,32 @@ $ chmod 755 run.sh
 
 URL:
 ```
-http://localhost:8080/{API URL}
+http://localhost:8000/{API URL}
 ```
 
 
 ## Test Curl
 ### 구현 1) 카테고리 별 최저 가격 브랜드와 상품 가격, 합계 금액 조회 API
 ```bash
-curl --location --request GET 'http://localhost:8080/md/price/summary'
+curl --location --request GET 'http://localhost:8000/md/price/summary'
 ```
 
 ### 구현 2) 최저 가격에 판매하는 브랜드와 카테고리의 상품 가격, 합계 금액 조회 API 
 ```bash
-curl --location --request GET 'http://localhost:8080/md/price/brand?order=asc'
+curl --location --request GET 'http://localhost:8000/md/price/brand?order=asc'
 ```
 * order=desc 로 설정할 경우 최고가 브랜드 조회
 
 ### 구현 3) 카테고리별 최저, 최고 가격 브랜드와 상품 가격을 조회하는 API
 ```bash
-curl --location --request GET 'http://localhost:8080/md/price/category?id=8' 
+curl --location --request GET 'http://localhost:8000/md/price/category?id=8' 
 ```
 * id는 1~8까지 사용 가능
 
 ### 구현 4) 브랜드 및 카테고리별 상품 가격 CRUD API
 #### 1. Create
 ```bash
- curl --location 'http://localhost:8080/md/brand' \
+ curl --location 'http://localhost:8000/md/brand' \
 --header 'Content-Type: application/json' \
 --data '{
     "brandName": "TESTBRAND",
@@ -121,12 +121,12 @@ curl --location --request GET 'http://localhost:8080/md/price/category?id=8'
 
 #### 2. Read
 ```bash
-curl --location 'http://localhost:8080/md/brand?id=10'
+curl --location 'http://localhost:8000/md/brand?id=10'
 ```
 
 #### 3. Update
 ```bash
-curl --location --request PUT 'http://localhost:8080/md/brand' \
+curl --location --request PUT 'http://localhost:8000/md/brand' \
 --header 'Content-Type: application/json' \
 --data '{
     "brandName": "TESTBRAND",
@@ -146,7 +146,7 @@ curl --location --request PUT 'http://localhost:8080/md/brand' \
 
 #### 4. Delete
 ```bash
-curl --location --request DELETE 'http://localhost:8080/md/brand?id=10'
+curl --location --request DELETE 'http://localhost:8000/md/brand?id=10'
 ```
 
 
