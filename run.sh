@@ -1,5 +1,4 @@
 #!/bin/bash
 
-gradle clean build bootJar -x test
-
+./gradlew clean build -x test
 java -jar ./build/libs/mdpicker-0.0.1-SNAPSHOT.jar
